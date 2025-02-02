@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- value of number passed from flask itself using parameter and placeholder -->
+<h2>Given input is {{ number }}</h2>
+
+<!-- writing conditions in html using jinja -->
+{% if number == 0 %}
+    <p>The given input {{number }} is neither Even nor Odd!</p>
+{% elif number % 2 == 0 %}
+    <p>The given input {{number }} is Even!</p>
+{% else %}
+    <p>The given input {{number }} is Odd!</p>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,23 @@
+<!-- Inherit code from layout.html -->
+{% extends "layout.html" %}
+
+<!-- only content dedicated to this page if want to coded here only -->
+<!-- If want to code separate code for the home.html file and wanted to execute it after code in layout.html -->
+<!-- block identifier_name can be used  -->
+<!-- so the code can be written between open block and close block using jinja template -->
+{% block content %}
+<h3>Contents:</h3>
+<ul>
+    <li>Home</li>
+    <!-- Redirect to About page if clicked on About in new tab   -->
+     <!-- if dont want to open it in new tab then remove target parameter -->
+    <li><a href=" {{ url_for('about') }} " target="_blank">About</a></li>
+    <!-- Redurect to Employee page if clicked on Employee in new tab -->
+    <li><a href=" {{ url_for('employees') }} " target="_blank">Employees</a></li>
+    <ul>
+        <li><a href=" {{ url_for('managers') }} " target="_blank">Managers</a></li>
+    </ul>
+    <li>Careers</li>
+    <li>Contact Us</li>
+</ul>
+{% endblock content %}
